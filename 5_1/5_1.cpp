@@ -1,9 +1,9 @@
-﻿#include <iostream>
+#include <iostream>
 #include <string>
 
 using namespace std;
 
- struct Figure
+ class Figure
  {
  private:
 	 int sides_figure = 0;
@@ -20,7 +20,7 @@ using namespace std;
 
  };
 
- struct Triangle: public Figure
+ class Triangle: public Figure
  {
  private:
 	 int sides_figure = 3;
@@ -37,7 +37,7 @@ using namespace std;
  
  }; 
  
- struct Quadrangle: public Figure
+ class Quadrangle: public Figure
  {
  private:
 	 int sides_figure = 4;
