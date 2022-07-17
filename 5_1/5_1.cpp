@@ -6,14 +6,24 @@ using namespace std;
  class Figure
  {
  private:
-	 int sides_figure = 0;
+	 int sides_figure = -999;
 
  public:
 	 virtual string display_name()
 	 {
 		 return "Фигура";
 	 }
-	 virtual int display_sides_figure()
+	 Figure()
+	 {
+		 sides_figure = 0;
+	 }
+
+	 Figure(int sides_count)
+	 {
+		 sides_figure = sides_count;
+	 }
+
+	 int display_sides_count()
 	 {
 		 return sides_figure;
 	 }
@@ -22,41 +32,32 @@ using namespace std;
 
  class Triangle: public Figure
  {
- private:
-	 int sides_figure = 3;
-
  public:
 	 string display_name() override
 	 {
 		 return "Треугольник";
 	 }
-	 int display_sides_figure() override
-	 {
-		 return sides_figure;
-	 }
+
+	 Triangle() :Figure(3)
+	 {}
  
  }; 
  
  class Quadrangle: public Figure
  {
- private:
-	 int sides_figure = 4;
-
  public:
 	 string display_name() override
 	 {
 		 return "Четырёхугольник";
 	 }
-	 int display_sides_figure() override
-	 {
-		 return sides_figure;
-	 }
+	 Quadrangle():Figure(4)
+	 {}
  
  };
 
  void print_figures(Figure* figure)
  {
-	 cout << figure->display_name() << ": " << figure->display_sides_figure() << endl;
+	 cout << figure->display_name() << ": " << figure->display_sides_count() << endl;
  }
 
 
