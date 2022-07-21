@@ -8,6 +8,12 @@ using namespace std;
  private:
 	 int sides_figure = -999;
 
+ protected:
+	 Figure(int sides_count)
+	 {
+		 sides_figure = sides_count;
+	 }
+
  public:
 	 virtual string display_name()
 	 {
@@ -16,11 +22,6 @@ using namespace std;
 	 Figure()
 	 {
 		 sides_figure = 0;
-	 }
-
-	 Figure(int sides_count)
-	 {
-		 sides_figure = sides_count;
 	 }
 
 	 int display_sides_count()
